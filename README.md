@@ -6,8 +6,8 @@
 
 <div align="center">
 
-# POC - Micronaut, Kotlin e GRPC.
-Trata-se de uma aplicação de prova de conceito para aplicar CRUD utilizando arquitetura: Micronaut, Kotlin e GRPC
+# POC - Micronaut, Kotlin e JWT.
+Trata-se de uma aplicação de prova de conceito para aplicar segurança utilizando arquitetura: Micronaut, Kotlin e JWT
 
 ![](https://img.shields.io/badge/Autor-Wesley%20Oliveira%20Santos-brightgreen)
 ![](https://img.shields.io/badge/Language-Kotlin-brightgreen)
