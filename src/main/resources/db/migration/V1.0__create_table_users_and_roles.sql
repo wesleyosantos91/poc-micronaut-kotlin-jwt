@@ -1,0 +1,19 @@
+CREATE TABLE users (
+    code BIGINT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
+
+CREATE TABLE roles (
+    code BIGINT PRIMARY KEY,
+    description VARCHAR(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
+
+CREATE TABLE roles_users (
+    user_code BIGINT NOT NULL,
+    role_code BIGINT NOT NULL,
+    PRIMARY KEY (user_code, role_code),
+    FOREIGN KEY (user_code) REFERENCES users(code),
+    FOREIGN KEY (role_code) REFERENCES roles(code)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;

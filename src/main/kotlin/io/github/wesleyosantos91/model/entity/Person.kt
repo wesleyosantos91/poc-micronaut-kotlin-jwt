@@ -6,7 +6,7 @@ import javax.persistence.*
 import javax.validation.constraints.Email
 
 @Entity
-@Table(name = "person")
+@Table(name = "persons")
 @Introspected
 data class Person(
     @Id
@@ -17,8 +17,8 @@ data class Person(
     @Column(name = "name")
     var name: String,
 
-    @Column(name = "data_nascimento")
-    var dataOfBirth: LocalDate,
+    @Column(name = "date_of_birth")
+    var dateOfBirth: LocalDate,
 
     @Column(name = "cpf")
     var cpf: String,

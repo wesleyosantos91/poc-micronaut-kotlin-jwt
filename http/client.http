@@ -1,0 +1,53 @@
+### Security
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "admin@github.com",
+  "password": "123456"
+}
+
+> {% client.global.set("auth_token", response.body.access_token); %}
+
+
+### CREATE
+POST http://localhost:8080/api/persons
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "name": "Raul Emanuel César Moura",
+  "dateOfBirth": "1985-12-07",
+  "cpf": "81940942675",
+  "email": "raulemanuelcesarmoura@brf-br.com.br"
+}
+
+> {% client.global.set("code", response.body.code); %}
+
+### READ
+GET http://localhost:8080/api/persons/{{code}}
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+### UPDATE
+PUT http://localhost:8080/api/persons/{{code}}
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "name": "Raul Emanuel César Moura",
+  "dateOfBirth": "1985-12-07",
+  "cpf": "81940942675",
+  "email": "raulemanuelcesarmoura@brf-br.com"
+}
+
+### DELETE
+DELETE http://localhost:8080/api/persons/{{code}}
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/api/persons
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json

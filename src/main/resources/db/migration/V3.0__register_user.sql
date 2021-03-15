@@ -1,1 +1,0 @@
-INSERT INTO user (cpf, password) values ('06691553063', '123456');
