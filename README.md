@@ -1,30 +1,60 @@
-## Micronaut 2.4.0 Documentation
+<div align="center">
 
-- [User Guide](https://docs.micronaut.io/2.4.0/guide/index.html)
-- [API Reference](https://docs.micronaut.io/2.4.0/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/2.4.0/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+![](https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange)
+<a href="https://wesleyosantos91.medium.com/authentication-provider-com-jwt-micronaut-e-kotlin-e53632fc5351"><img src="https://img.shields.io/badge/-Artigo-%2312100E?style=flat&logo=medium&logoColor=white"/></a>
+</div>
 
-## Feature security-jwt documentation
+<div align="center">
 
-- [Micronaut Security JWT documentation](https://micronaut-projects.github.io/micronaut-security/latest/guide/index.html)
+# POC - Micronaut, Kotlin e GRPC.
+Trata-se de uma aplicação de prova de conceito para aplicar CRUD utilizando arquitetura: Micronaut, Kotlin e GRPC
 
-## Feature testcontainers documentation
+![](https://img.shields.io/badge/Autor-Wesley%20Oliveira%20Santos-brightgreen)
+![](https://img.shields.io/badge/Language-Kotlin-brightgreen)
+![](https://img.shields.io/badge/Framework-Micronaut-brightgreen)
+![](https://img.shields.io/badge/Security-JWT-brightgreen)
 
-- [https://www.testcontainers.org/](https://www.testcontainers.org/)
+</div> 
 
-## Feature jdbc-hikari documentation
+## Fundamentos teóricos
 
-- [Micronaut Hikari JDBC Connection Pool documentation](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#jdbc)
+> Micronaut: Microunaut é um framework baseado na JVM para criação de micros-serviços inspirado pelo Spring e Grails e permite a criação de aplicações utilizando Java, Kotlin ou Groovy.
 
-## Feature flyway documentation
+> JWT: O JSON Web Token é um padrão da Internet para a criação de dados com assinatura opcional e/ou criptografia cujo payload contém o JSON que afirma algum número de declarações. Os tokens são assinados usando um segredo privado ou uma chave pública/privada.
 
-- [Micronaut Flyway Database Migration documentation](https://micronaut-projects.github.io/micronaut-flyway/latest/guide/index.html)
+> Kotlin: Kotlin é uma Linguagem de programação multiplataforma, orientada a objetos e funcional, concisa e estaticamente tipada, desenvolvida pela JetBrains em 2011, que compila para a Máquina virtual Java e que também pode ser traduzida para a linguagem JavaScript e compilada para código nativo.
 
-- [https://flywaydb.org/](https://flywaydb.org/)
+## Tecnologias
+- Kotlin 1.4.30
+- Micronaut 2.4.0
+    - micronaut-validation
+    - micronaut-kotlin-runtime
+    - micronaut-jdbc-hikari
+    - micronaut-data-jdbc
+    - micronaut-data-processor
+    - micronaut-security-annotations
+    - micronaut-security-jwt
+- spring-security-crypto
+- testcontainers
+- Flywaydb
+- Mysql
+- GIT
 
-## Feature http-client documentation
+## Execução
 
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+A execução das aplicações são feitas através do de um comando Gradle que envoca a inicialização do Micronaut.
 
+- Scripts
+  ### Executar docker-compose
+    - 1° comando: ``` cd src/main/docker/```
+    - 2° comando: ```docker-compose -f docker-compose.yml up```
+  ### Executar a aplicação
+    - 1° comando: ``` ./gradlew build```
+    - 2° comando: ```./gradlew run```
+
+## Utilização
+
+-  Efetuar uma requisição REST temos duas alternativas:
+   - 1º Client nativo da versão full do Intellij IDEIA ``` /client/client.http```
+   - 2° Arquivo de configuração do Client Postman ``` /client/poc-micronaut-kotlin-jwt.postman_collection.json```
+    

@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "6db4d630-152a-42dd-aa48-8aa04f665fcb",
+		"name": "poc-micronaut-kotlin-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin@github.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnaXRodWIuY29tIiwibmJmIjoxNjE1NzkyODM5LCJyb2xlcyI6WyJST0xFX0NSRUFURV9QRVJTT04iLCJST0xFX1JFQURfUEVSU09OIiwiUk9MRV9VUERBREVfUEVSU09OIiwiUk9MRV9SRU1PVkVfUEVSU09OIl0sImlzcyI6InBvYy1taWNyb25hdXQta290bGluLWp3dCIsImV4cCI6MTYxNTc5NjQzOSwiaWF0IjoxNjE1NzkyODM5fQ.iYe9wAprS1C-iz2JwpcK8fRnjL-c55Z-RyMZlRooHQM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Raul Emanuel César Moura\",\n    \"dateOfBirth\": \"1985-12-07\",\n    \"cpf\": \"81940942675\",\n    \"email\": \"raulemanuelcesarmoura@brf-br.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnaXRodWIuY29tIiwibmJmIjoxNjE1NzkzMTA5LCJyb2xlcyI6WyJST0xFX0NSRUFURV9QRVJTT04iLCJST0xFX1JFQURfUEVSU09OIiwiUk9MRV9VUERBREVfUEVSU09OIiwiUk9MRV9SRU1PVkVfUEVSU09OIl0sImlzcyI6InBvYy1taWNyb25hdXQta290bGluLWp3dCIsImV4cCI6MTYxNTc5NjcwOSwiaWF0IjoxNjE1NzkzMTA5fQ.h4EftWN-1YcSo_cFPFNkF3HIc2O23PSeFrOnPqIWRE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read-by-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnaXRodWIuY29tIiwibmJmIjoxNjE1NzkzMTA5LCJyb2xlcyI6WyJST0xFX0NSRUFURV9QRVJTT04iLCJST0xFX1JFQURfUEVSU09OIiwiUk9MRV9VUERBREVfUEVSU09OIiwiUk9MRV9SRU1PVkVfUEVSU09OIl0sImlzcyI6InBvYy1taWNyb25hdXQta290bGluLWp3dCIsImV4cCI6MTYxNTc5NjcwOSwiaWF0IjoxNjE1NzkzMTA5fQ.h4EftWN-1YcSo_cFPFNkF3HIc2O23PSeFrOnPqIWRE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/persons/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnaXRodWIuY29tIiwibmJmIjoxNjE1NzkzNjg1LCJyb2xlcyI6WyJST0xFX0NSRUFURV9QRVJTT04iLCJST0xFX1JFQURfUEVSU09OIiwiUk9MRV9VUERBREVfUEVSU09OIiwiUk9MRV9SRU1PVkVfUEVSU09OIl0sImlzcyI6InBvYy1taWNyb25hdXQta290bGluLWp3dCIsImV4cCI6MTYxNTc5NzI4NSwiaWF0IjoxNjE1NzkzNjg1fQ.5EhY4DKOSQnYL7wF_R6WVwsYNHVZ3nRpT5WIS6LaSEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Raul Emanuel César Moura\",\n    \"dateOfBirth\": \"1985-12-07\",\n    \"cpf\": \"81940942675\",\n    \"email\": \"raulemanuelcesarmoura@brf-br.com.br\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/persons/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnaXRodWIuY29tIiwibmJmIjoxNjE1NzkzMTA5LCJyb2xlcyI6WyJST0xFX0NSRUFURV9QRVJTT04iLCJST0xFX1JFQURfUEVSU09OIiwiUk9MRV9VUERBREVfUEVSU09OIiwiUk9MRV9SRU1PVkVfUEVSU09OIl0sImlzcyI6InBvYy1taWNyb25hdXQta290bGluLWp3dCIsImV4cCI6MTYxNTc5NjcwOSwiaWF0IjoxNjE1NzkzMTA5fQ.h4EftWN-1YcSo_cFPFNkF3HIc2O23PSeFrOnPqIWRE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/persons/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
